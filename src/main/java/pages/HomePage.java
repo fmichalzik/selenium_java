@@ -59,6 +59,16 @@ private WebDriver driver;
         return new ContextMenuPage(driver);
     }
 
+    public WysiwygEditorPage clickWysiwygEditorLink() {
+        clickLink("WYSIWYG Editor");
+        return new WysiwygEditorPage(driver);
+    }
+
+    public FramesPage clickFramesLink() {
+        clickLink("Frames");
+        return new FramesPage(driver);
+    }
+
     private void clickLink(String linkText) {
         driver.findElement(By.linkText(linkText)).click();
     }
