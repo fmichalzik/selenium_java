@@ -67,7 +67,7 @@ public class WindowManager {
         // Creates an array list with the handles of the open windows
         // and switches to the windows with the handle at index 1 (second)
         // asserts might be error prone when some other tabs are open for what ever reason
-        ArrayList<String> tabs = new ArrayList<String>(driver.getWindowHandles());
+        ArrayList<String> tabs = new ArrayList<>(driver.getWindowHandles());
         driver.switchTo().window(tabs.get(1));
     }
 

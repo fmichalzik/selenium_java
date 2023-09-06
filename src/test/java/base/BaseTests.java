@@ -1,18 +1,14 @@
 package base;
 
-import org.openqa.selenium.By;
+
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
-import org.testng.annotations.BeforeTest;
 import pages.HomePage;
 import utils.WindowManager;
 
-import java.util.List;
-import java.util.concurrent.TimeUnit;
 
 public class BaseTests {
     private WebDriver driver;
