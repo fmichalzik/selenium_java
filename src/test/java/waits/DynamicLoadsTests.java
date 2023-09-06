@@ -1,7 +1,6 @@
 package waits;
 
 import base.BaseTests;
-import com.google.errorprone.annotations.Var;
 import org.testng.annotations.Test;
 import pages.DynamicLoadingPage;
 
@@ -25,6 +24,16 @@ public class DynamicLoadsTests extends BaseTests {
         DynamicLoadingPage.Example2 example2 = dynamicLoadingPage.clickExample2();
         assertEquals(example2.clickStartAndGetText(), "Hello World!"
                 , "Incorrect text or text not present");
+    }
+
+    @Test
+    public void testDynamicLoading2WithTabNavigation() {
+        DynamicLoadingPage.Example2 example2 = homePage.clickDynamicLoadingLink().openExample2InNewTab();
+        getWindowManager().switchToNewTab();
+        assertEquals(example2.clickStartAndGetText(), "Hello World!"
+                ,"Incorrect text or text not present");
+
+
     }
 
 

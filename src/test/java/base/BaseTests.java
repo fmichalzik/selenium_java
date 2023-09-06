@@ -9,6 +9,7 @@ import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.BeforeTest;
 import pages.HomePage;
+import utils.WindowManager;
 
 import java.util.List;
 import java.util.concurrent.TimeUnit;
@@ -35,5 +36,10 @@ public class BaseTests {
     @AfterClass
     public void tearDown() {
         driver.quit();
+    }
+
+    // a method to pass the driver to the WindowManager object → see comment in NavigationTests.java
+    public WindowManager getWindowManager() {
+        return new WindowManager(driver);
     }
 }

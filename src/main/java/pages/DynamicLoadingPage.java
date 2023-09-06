@@ -1,6 +1,7 @@
 package pages;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -26,6 +27,11 @@ public class DynamicLoadingPage {
 
     public Example2 clickExample2() {
         driver.findElement(example2Link).click();
+        return new Example2(driver);
+    }
+
+    public Example2 openExample2InNewTab() {
+        driver.findElement(example2Link).sendKeys(Keys.CONTROL, Keys.RETURN);
         return new Example2(driver);
     }
 
